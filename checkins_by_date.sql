@@ -11,8 +11,7 @@ RETURNS TABLE(
 AS $$
 SELECT date(occurred_date_time) as checkin_date, count(*)
 	FROM folio_circulation.check_in__t
-	WHERE occurred_date_time >= '2024-01-01 00:00:00.000'
-        WHERE start_date <= occurred_date_time::date AND occurred_date_time::date < end_date
+	WHERE start_date <= occurred_date_time::date AND occurred_date_time::date < end_date
 	GROUP BY date(occurred_date_time)
 	ORDER BY date(occurred_date_time)
 $$
