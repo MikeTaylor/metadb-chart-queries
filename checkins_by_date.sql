@@ -7,7 +7,10 @@ CREATE FUNCTION checkins_by_date(
     end_date date DEFAULT '9999-12-31')
 RETURNS TABLE(
     checkin_date date,
-    count integer)
+    count integer,
+    more integer,
+    less integer
+)
 AS $$
 SELECT date(occurred_date_time) as checkin_date, count(*), 1+count(*) as more, count(*)/2 as less
 	FROM folio_circulation.check_in__t
