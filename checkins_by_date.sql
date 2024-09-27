@@ -12,7 +12,7 @@ RETURNS TABLE(
     less integer
 )
 AS $$
-SELECT date(occurred_date_time) as checkin_date, count(*), 1+count(*) as more, count(*)/2 as less
+SELECT date(occurred_date_time) as checkin_date, count(*), int(1+count(*)) as more, int(count(*)/2) as less
 	FROM folio_circulation.check_in__t
 	WHERE start_date <= occurred_date_time::date AND occurred_date_time::date < end_date
 	GROUP BY date(occurred_date_time)
