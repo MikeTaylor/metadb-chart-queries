@@ -1,0 +1,19 @@
+{
+  "displayName": "Sub-subdir copy of Count Checkins",
+  "description": "Returns a list of all dates within the range for which checkins occurred, together with the number of checkins for each date",
+  "instructions": "Enter either, both or no parameters",
+  "parameters": [
+    {
+      "name": "start_date",
+      "displayName": "Earliest checkin date to count",
+      "type": "date",
+      "required": false
+    },
+    {
+      "name": "end_date",
+      "displayName": "Latest checkin date to count",
+      "type": "date",
+      "required": false
+    }
+  ]
+}
